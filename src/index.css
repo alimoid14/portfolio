@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/syne/600.css";
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/500.css";
+
+@theme {
+  --font-body: "inter", sans-serif;
+  --font-heading: "syne", sans-serif;
+  --color-gradient: linear-gradient(
+    90deg,
+    #ff4d6d 0%,
+    #bd3eb2 25%,
+    #7b2ff7 50%,
+    #2f86f7 75%,
+    #2ff7ed 100%
+  );
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-body text-xl overflow-x-clip;
+  }
+  h3 {
+    @apply font-heading font-medium uppercase text-2xl;
+  }
+}
+
+@layer components {
+  .main-container {
+    @apply max-w-400 m-auto w-full px-4 lg:px-12;
+  }
+
+  h1 {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 12px;
+      width: 99%;
+      height: 1vh;
+      background: var(--color-gradient);
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      width: 99%;
+      height: 2px;
+      background: var(--color-gradient);
+      z-index: -1;
+    }
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+
+  .btn {
+    background: linear-gradient(#000, #000) padding-box,
+      var(--color-gradient) border-box;
+  }
+
+  .btn:hover {
+    background: var(--color-gradient) padding-box,
+      var(--color-gradient) border-box;
+    color: white;
+  }
+
+  .btn-light {
+    background: linear-gradient(#fff, #fff) padding-box,
+      var(--color-gradient) border-box;
+    color: black;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee 20s linear infinite reverse;
+  }
+
+  @keyframes rotate360 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .marquee-gryphon-1 {
+    animation: rotate360 20s linear infinite;
+  }
+
+  .marquee-gryphon-2 {
+    animation: rotate360 20s linear infinite reverse;
+  }
+
+  .menu-link {
+    @apply text-4xl md:text-6xl font-heading font-medium uppercase opacity-60 hover:opacity-100;
+  }
+}
+
+@media (max-width: 1023px) {
+  h1::before {
+    bottom: 4px;
+  }
+}
