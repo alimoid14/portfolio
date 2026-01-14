@@ -47,7 +47,7 @@ const About = () => {
       className="relative z-10 min-h-screen bg-white rounded-tl-[60px] rounded-tr-[60px]"
     >
       <div className="main-container py-4 lg:py-12 h-full flex flex-col gap-6 md:gap-8 justify-center items-center font-heading text-black text-2xl md:text-3xl xl:text-5xl">
-        <p className="about-text max-w-4xl leading-relaxed text-center">
+        <p className="about-text leading-tight text-center max-w-5xl">
           I build web apps using modern technologies like React, Node.js,
           Tailwind CSS, and more. My focus is on creating responsive,
           user-friendly interfaces that provide seamless experiences across all
