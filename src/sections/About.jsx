@@ -12,13 +12,13 @@ const About = () => {
 
   useGSAP(() => {
     SplitText.create(".about-text", {
-      type: "lines, chars",
+      type: "lines, words",
       onSplit(self) {
-        gsap.set(self.chars, {
+        gsap.set(self.words, {
           opacity: 0.3,
         });
 
-        gsap.to(self.chars, {
+        gsap.to(self.words, {
           opacity: 1,
           stagger: 0.05,
           scrollTrigger: {
@@ -38,8 +38,8 @@ const About = () => {
         ref={aboutRef}
         className="relative z-10 h-screen bg-white rounded-tl-[60px] rounded-tr-[60px]"
       >
-        <div className="main-container py-4 lg:py-12 h-full flex flex-col gap-6 md:gap-8 justify-center items-center font-heading text-black text-2xl md:text-3xl xl:text-5xl leading-tight">
-          <p className="about-text">
+        <div className="main-container py-4 lg:py-12 h-full flex flex-col gap-6 md:gap-8 justify-center items-center font-heading text-black text-2xl md:text-3xl xl:text-5xl">
+          <p className="about-text leading-tight">
             I build web apps using modern technologies like React, Node.js,
             Tailwind CSS, and more. My focus is on creating responsive,
             user-friendly interfaces that provide seamless experiences across
