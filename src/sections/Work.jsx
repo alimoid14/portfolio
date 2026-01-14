@@ -35,7 +35,7 @@ const Work = () => {
         className="h-screen bg-white text-black py-24 lg:py-40"
       >
         {/* title wrapper */}
-        <div className="main-container pb-8 lg:pb-12 flex max-md:flex-col gap-6 justify-between items-start md:items-end">
+        <div className="main-container pb-8 lg:pb-12 flex max-md:flex-col gap-6 justify-between items-start md:items-end overflow-hidden">
           <div className="max-w-xl">
             <h3 className="mb-3">Selected Work</h3>
             <p className="text-lg lg:text-xl">
@@ -46,7 +46,7 @@ const Work = () => {
         </div>
         {/* project wrapper */}
         <div ref={projectRef}>
-          <div className="flex gap-4 lg:gap-8 ms-4 lg:ms-[40%] mt-6">
+          <div className="flex gap-4 lg:gap-8 ms-4 lg:ms-[40%] mt-6 overflow-hidden">
             {projects.map((project) => (
               <a
                 href={project.link}
